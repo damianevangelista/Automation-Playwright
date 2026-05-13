@@ -1,5 +1,4 @@
 import { Locator, Page } from "@playwright/test";
-import generalData from "../Datas/generalData.json"
 
 class loginPage {
     private page: Page;
@@ -34,7 +33,7 @@ class loginPage {
     }
 
     async isUrlLoginPage() {
-        return this.page.url().includes(generalData[0].url_loginPage);
+        return this.page.url().includes('/web/index.php/auth/login');
     }
 
     async getErrorMessageInvalidCredencial() {

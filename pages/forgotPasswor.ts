@@ -1,5 +1,4 @@
 import { Locator, Page } from "@playwright/test";
-import generalData from "../Datas/generalData.json"
 
 class forgotPasswordPage {
     private page: Page;
@@ -21,7 +20,7 @@ class forgotPasswordPage {
     }
 
     async isUrlForgotPassword() {
-        return this.page.url().includes(generalData[0].url_forgotPassword)
+        return this.page.url().includes('requestPasswordResetCode')
     }
 
     async getResetPasswordTitle() {
