@@ -1,0 +1,6 @@
+[
+    {
+        "url_loginPage": "/web/index.php/auth/login",
+        "url_forgotPassword": "/auth/requestPasswordResetCode"
+    }
+]
