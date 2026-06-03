@@ -1,4 +1,5 @@
-import { Locator, Page } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
+import * as allure from "allure-js-commons";
 
 class forgotPasswordPage {
     private page: Page;
@@ -19,27 +20,40 @@ class forgotPasswordPage {
 
     }
 
+
     async isUrlForgotPassword() {
-        return this.page.url().includes('requestPasswordResetCode')
+        return await allure.step('Check Forgot Password Page URL', async () => {
+            expect(this.page.url().includes('requestPasswordResetCode')).toBe(true);
+        })
     }
 
     async getResetPasswordTitle() {
-        return await this.resetPasswordTitle.textContent()
+        return await allure.step('Get Reset Password Title', async () => {
+            return await this.resetPasswordTitle.textContent()
+        })
     }
 
     async getUsernameRequiredError() {
-        return await this.usernameRequiredError.textContent()
+        return await allure.step('Get Username Required Error', async () => {
+            return await this.usernameRequiredError.textContent()
+        })
     }
 
     async fillUsername(username: string) {
-        await this.usernameInput.fill(username)
+        return await allure.step('Fill Username', async () => {
+            await this.usernameInput.fill(username)
+        })
     }
 
     async clickResetPassword() {
-        await this.resetPasswordButton.click()
+        return await allure.step('Click Reset Password Button', async () => {
+            await this.resetPasswordButton.click()
+        })
     }
     async clickCancel() {
-        await this.cancelButton.click()
+        return await allure.step('Click Cancel Button', async () => {
+            await this.cancelButton.click()
+        })
     }
 }
 

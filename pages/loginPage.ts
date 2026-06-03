@@ -1,4 +1,5 @@
-import { Locator, Page } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
+import * as allure from "allure-js-commons";
 
 class loginPage {
     private page: Page;
@@ -22,30 +23,56 @@ class loginPage {
         this.errorMessagePasswordRequired = this.page.locator('.oxd-input-field-error-message').last();
     }
 
+    async openBrowser() {
+        await allure.step('Open Browser', async () => {
+            await this.page.goto(process.env.baseurl!)
+        })
+    }
+
     async Login(username: string, password: string) {
-        await this.username.fill(username)
-        await this.password.fill(password)
-        await this.login.click()
+        await allure.step('Fill Username', async () => {
+            await expect(this.username).toBeVisible()
+            await this.username.fill(username)
+        })
+        await allure.step('Fill Password', async () => {
+            await expect(this.password).toBeVisible()
+            await this.password.fill(password)
+        })
+        await allure.step('Click Login', async () => {
+            await expect(this.login).toBeVisible()
+            await this.login.click()
+        })
     }
 
     async forgotPasswordLink() {
-        await this.forgotPassword.click()
+        await allure.step('Click Forgot Password', async () => {
+            await expect(this.forgotPassword).toBeVisible()
+            await this.forgotPassword.click()
+        })
     }
 
     async isUrlLoginPage() {
-        return this.page.url().includes('/web/index.php/auth/login');
+        return await allure.step('Check Login Page URL', async () => {
+            expect(this.page.url().includes('/web/index.php/auth/login')).toBe(true);
+        })
     }
 
     async getErrorMessageInvalidCredencial() {
-        return await this.errorMessageInvalidCredencial.textContent()
+        return await allure.step('Get Error Message Invalid Credencial', async () => {
+            return await this.errorMessageInvalidCredencial.textContent()
+        })
     }
 
     async getErrorMessageUsernameRequired() {
-        return await this.errorMessageUsernameRequired.textContent()
+        return await allure.step('Get Error Message Username Required', async () => {
+            return await this.errorMessageUsernameRequired.textContent()
+        })
     }
 
     async getErrorMessagePasswordRequired() {
-        return await this.errorMessagePasswordRequired.textContent()
+        return await allure.step('Get Error Message Password Required', async () => {
+            return await this.errorMessagePasswordRequired.textContent()
+        })
     }
 }
 
