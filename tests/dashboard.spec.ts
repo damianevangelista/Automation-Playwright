@@ -27,4 +27,10 @@ test('Go to Assign Leave Through Dashboard Quick Launch', async ({ page }) => {
     await dashboard.goToAssignLeave();
 })
 
+test('Go to Pending Self Review Through Dashboard My Actions', async ({ page }) => {
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    const dashboard = new Dashboard(page);
+    await dashboard.goToPendingSelfReview();
+})
+
 

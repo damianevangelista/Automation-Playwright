@@ -10,6 +10,7 @@ class Dashboard {
     private quickLaunch: Locator;
     private buzzLatestPost: Locator;
     private dasQuickAssignLeave: Locator;
+    private dashPendingSelfReview: Locator;
 
 
     constructor(page: Page) {
@@ -21,6 +22,7 @@ class Dashboard {
         this.quickLaunch = this.page.locator("body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1)");
         this.buzzLatestPost = this.page.locator("body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1)");
         this.dasQuickAssignLeave = this.page.getByRole('button', { name: 'Assign Leave' });
+        this.dashPendingSelfReview = this.page.locator(':text("(1) Pending Self Review")');
 
     }
 
@@ -74,6 +76,17 @@ class Dashboard {
             expect(this.page.url().includes('assignLeave')).toBe(true);
         })
     }
+
+    async goToPendingSelfReview() {
+        await allure.step('Click On Pending Self Review', async () => {
+            await this.dashPendingSelfReview.click();
+        })
+        await allure.step('Verify Performance Page URL', async () => {
+            expect(this.page.url().includes('/performance/')).toBe(true);
+        })
+    }
+
+
 }
 
 export default Dashboard
