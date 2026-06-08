@@ -1,5 +1,7 @@
 import { expect, Locator, Page } from "@playwright/test";
 import * as allure from "allure-js-commons";
+import fs from 'fs';
+const generalData = JSON.parse(fs.readFileSync('Datas/generalData.json', 'utf-8'));
 
 class forgotPasswordPage {
     private page: Page;
@@ -23,7 +25,7 @@ class forgotPasswordPage {
 
     async isUrlForgotPassword() {
         return await allure.step('Check Forgot Password Page URL', async () => {
-            expect(this.page.url().includes('requestPasswordResetCode')).toBe(true);
+            expect(this.page.url().includes(generalData.forgotPasswordPage.url)).toBe(true);
         })
     }
 

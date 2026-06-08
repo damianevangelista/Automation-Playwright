@@ -1,5 +1,8 @@
 import { Page, expect, Locator } from "@playwright/test";
 import * as allure from "allure-js-commons"
+import fs from "fs";
+const errorMessage = JSON.parse(fs.readFileSync('Datas/errorMessage.json', 'utf-8'));
+const generalData = JSON.parse(fs.readFileSync('Datas/login.json', 'utf-8'));
 
 class adminUserManagement {
     private page: Page;
@@ -52,7 +55,7 @@ class adminUserManagement {
     async verifyAdminTitle() {
         return await allure.step('verify Admin Title', async () => {
             await expect(this.adminTitle).toBeVisible();
-            await expect(this.adminTitle).toContainText('Admin');
+            await expect(this.adminTitle).toContainText(generalData.adminPage.url);
         })
     }
 
@@ -107,27 +110,27 @@ class adminUserManagement {
             await this.saveButton.click();
         })
         await allure.step("Verify User Role Required Message", async () => {
-            await expect(this.userRoleRequiredMessage).toContainText('Required');
+            await expect(this.userRoleRequiredMessage).toContainText(errorMessage.required.message);
             await expect(this.userRoleRequiredMessage).toBeVisible();
         })
         await allure.step("Verify Status Required Message", async () => {
-            await expect(this.statusRequiredMessage).toContainText('Required');
+            await expect(this.statusRequiredMessage).toContainText(errorMessage.required.message);
             await expect(this.statusRequiredMessage).toBeVisible();
         })
         await allure.step("Verify Employee Name Required Message", async () => {
-            await expect(this.employeeNameRequiredMessage).toContainText('Required');
+            await expect(this.employeeNameRequiredMessage).toContainText(errorMessage.required.message);
             await expect(this.employeeNameRequiredMessage).toBeVisible();
         })
         await allure.step("Verify User Name Required Message", async () => {
-            await expect(this.userNameRequiredMessage).toContainText('Required');
+            await expect(this.userNameRequiredMessage).toContainText(errorMessage.required.message);
             await expect(this.userNameRequiredMessage).toBeVisible();
         })
         await allure.step("Verify Password Required Message", async () => {
-            await expect(this.passwordRequiredMessage).toContainText('Required');
+            await expect(this.passwordRequiredMessage).toContainText(errorMessage.required.message);
             await expect(this.passwordRequiredMessage).toBeVisible();
         })
         await allure.step("Verify Confirm Password Required Message", async () => {
-            await expect(this.confirmPasswordRequiredMessage).toContainText('Passwords do not match');
+            await expect(this.confirmPasswordRequiredMessage).toContainText(errorMessage.passwordsDoNotMatch.message);
             await expect(this.confirmPasswordRequiredMessage).toBeVisible();
         })
     }

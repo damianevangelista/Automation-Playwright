@@ -1,12 +1,11 @@
 import { test, expect } from '@playwright/test';
 import Dashboard from '../pages/dashboard';
-import loginPage from '../pages/loginPage';
-import { clearScreenDown } from 'node:readline';
+import loginUtil from '../Utils/loginUtil';
+
 
 test.beforeEach(async ({ page }) => {
-    const login = new loginPage(page);
-    await login.openBrowser();
-    await login.Login(process.env.user!, process.env.password!);
+    const login = new loginUtil(page);
+    await login.login();
 })
 
 test('Verify Dashboard page is loaded successfully', async ({ page }) => {

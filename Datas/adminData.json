@@ -1,0 +1,40 @@
+{
+    "addJob": {
+        "jobTitle": "Software Engineer Title Damian",
+        "jobDescription": "Software Engineer Description",
+        "attachmentPath": "C:\\Users\\user\\Desktop\\AUTOMATION\\OrangeHR\\Datas\\test.txt",
+        "note": "Software Engineer Note"
+    },
+    "addUserAdminEnabled": {
+        "userRole": "Admin",
+        "status": "Enabled",
+        "employeeName": "Charles  Carter",
+        "userName": "Jhoan4587141121",
+        "password": "Daf587141121",
+        "confirmPassword": "Daf587141121"
+    },
+    "addUserAdminDisabled": {
+        "userRole": "Admin",
+        "status": "Disabled",
+        "employeeName": "Charles  Carter",
+        "userName": "Jhoan4587141122",
+        "password": "Daf587141122",
+        "confirmPassword": "Daf587141122"
+    },
+    "addUserEssEnabled": {
+        "userRole": "ESS",
+        "status": "Enabled",
+        "employeeName": "Charles  Carter",
+        "userName": "Jhoan4587141123",
+        "password": "Daf587141123",
+        "confirmPassword": "Daf587141123"
+    },
+    "addUserEssDisabled": {
+        "userRole": "ESS",
+        "status": "Disabled",
+        "employeeName": "Charles  Carter",
+        "userName": "Jhoan4587141124",
+        "password": "Daf587141124",
+        "confirmPassword": "Daf587141124"
+    }
+}

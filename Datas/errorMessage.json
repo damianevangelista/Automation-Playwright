@@ -1,8 +1,11 @@
-[
-    {
+{
+    "invalidCredentials": {
         "message": "Invalid credentials"
     },
-    {
+    "required": {
         "message": "Required"
+    },
+    "passwordsDoNotMatch": {
+        "message": "Passwords do not match"
     }
-]
+}

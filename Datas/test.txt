@@ -33,7 +33,7 @@ class adminJobs {
         this.addJobTitle = this.page.getByRole('heading', { name: 'Add Job Title' });
         this.jobTitleInput = this.page.getByRole('textbox').nth(1);
         this.jobDescriptionInput = this.page.getByRole('textbox', { name: 'Type description here' });
-        this.jobFile = this.page.locator('input[type="file"]');
+        this.jobFile = this.page.getByText('Browse');
         this.jobNote = this.page.getByRole('textbox', { name: 'Add note' });
         this.saveJobBtn = this.page.getByRole('button', { name: 'Save' });
         this.cancelJobBtn = this.page.getByRole('button', { name: 'Cancel' });

@@ -1,5 +1,7 @@
 import { expect, Locator, Page } from "@playwright/test";
 import * as allure from "allure-js-commons";
+import fs from "fs";
+const generalData = JSON.parse(fs.readFileSync('Datas/generalData.json', 'utf-8'));
 
 class loginPage {
     private page: Page;
@@ -53,7 +55,7 @@ class loginPage {
 
     async isUrlLoginPage() {
         return await allure.step('Check Login Page URL', async () => {
-            expect(this.page.url().includes('/web/index.php/auth/login')).toBe(true);
+            expect(this.page.url().includes(generalData.loginPage.url)).toBe(true);
         })
     }
 

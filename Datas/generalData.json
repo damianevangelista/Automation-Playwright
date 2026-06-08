@@ -1,6 +1,26 @@
-[
-    {
-        "url_loginPage": "/web/index.php/auth/login",
-        "url_forgotPassword": "/auth/requestPasswordResetCode"
+{
+    "loginPage": {
+        "url": "/web/index.php/auth/login"
+    },
+    "forgotPasswordPage": {
+        "url": "requestPasswordResetCode"
+    },
+    "dashboardPage": {
+        "url": "Dashboard"
+    },
+    "adminPage": {
+        "url": "/web/index.php/admin/viewSystemUsers"
+    },
+    "recruitmentPage": {
+        "url": "/web/index.php/recruitment/viewCandidates"
+    },
+    "pimPage": {
+        "url": "/web/index.php/pim/viewEmployeeList"
+    },
+    "leavePage": {
+        "url": "/web/index.php/leave/viewLeaveList"
+    },
+    "timePage": {
+        "url": "/web/index.php/time/viewEmployeeAttendance"
     }
-]
+}
