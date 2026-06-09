@@ -2,7 +2,7 @@ import { Page, expect, Locator } from "@playwright/test";
 import * as allure from "allure-js-commons"
 import fs from "fs";
 const errorMessage = JSON.parse(fs.readFileSync('Datas/errorMessage.json', 'utf-8'));
-const generalData = JSON.parse(fs.readFileSync('Datas/login.json', 'utf-8'));
+const generalData = JSON.parse(fs.readFileSync('Datas/generalData.json', 'utf-8'));
 
 class adminUserManagement {
     private page: Page;
