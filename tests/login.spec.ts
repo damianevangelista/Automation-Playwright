@@ -32,7 +32,7 @@ test('Login with wrong username', async ({ page }) => {
   const login = new loginPage(page);
   await page.waitForLoadState('domcontentloaded');
   await login.Login(process.env.wronguser!, process.env.password!);
-  expect(await login.getErrorMessageInvalidCredencial()).toContain(errorMessage.required.message);
+  expect(await login.getErrorMessageInvalidCredencial()).toContain(errorMessage.invalidCredentials.message);
   await page.close()
 })
 

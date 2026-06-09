@@ -22,5 +22,8 @@
     },
     "timePage": {
         "url": "/web/index.php/time/viewEmployeeAttendance"
+    },
+    "adminPageTitles": {
+        "userManagement": "User Management"
     }
 }

@@ -55,7 +55,7 @@ class adminUserManagement {
     async verifyAdminTitle() {
         return await allure.step('verify Admin Title', async () => {
             await expect(this.adminTitle).toBeVisible();
-            await expect(this.adminTitle).toContainText(generalData.adminPage.url);
+            await expect(this.adminTitle).toContainText(generalData.adminPageTitles.userManagement);
         })
     }
 
