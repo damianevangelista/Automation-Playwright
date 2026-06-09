@@ -6,7 +6,7 @@ import ErrorMessage from '../Datas/errorMessage.json'
 const generalData = JSON.parse(fs.readFileSync('Datas/generalData.json', 'utf-8'));
 
 test.beforeEach(async ({ page }) => {
-    await page.goto(process.env.BaseUrl!)
+    await page.goto(process.env.baseurl!)
 })
 
 test('Validate Forgot Password Page', async ({ page }) => {
