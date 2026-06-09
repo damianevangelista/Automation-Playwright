@@ -15,7 +15,7 @@ class loginUtil {
 
     async login() {
         await this.loginPage.openBrowser();
-        await this.loginPage.Login(process.env.USER!, process.env.PASSWORD!);
+        await this.loginPage.Login(process.env.user!, process.env.password!);
     }
 
     async loginAndClickPIM() {
