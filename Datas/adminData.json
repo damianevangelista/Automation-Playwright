@@ -2,7 +2,7 @@
     "addJob": {
         "jobTitle": "Software Engineer Title Damian",
         "jobDescription": "Software Engineer Description",
-        "attachmentPath": "C:\\Users\\user\\Desktop\\AUTOMATION\\OrangeHR\\Datas\\test.txt",
+        "attachmentPath": "Datas/test.txt",
         "note": "Software Engineer Note"
     },
     "addUserAdminEnabled": {
