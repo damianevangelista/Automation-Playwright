@@ -23,7 +23,10 @@
     "timePage": {
         "url": "/web/index.php/time/viewEmployeeAttendance"
     },
+    "punchInOutPage": {
+        "url": "/web/index.php/attendance/punch"
+    },
     "adminPageTitles": {
         "userManagement": "User Management"
     }
-}
+}

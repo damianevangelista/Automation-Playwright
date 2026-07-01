@@ -19,12 +19,12 @@ class loginUtil {
     }
 
     async loginAndClickPIM() {
-        this.login()
+        await this.login();
         await this.menuOption.clickPim();
     }
 
     async loginAndClickAdmin() {
-        this.login()
+        await this.login();
         await this.menuOption.clickAdmin();
     }
 
